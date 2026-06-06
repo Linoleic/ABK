@@ -31,14 +31,15 @@ android {
         applicationId = "com.abk.kernel"
         minSdk = 26
         targetSdk = 35
-        versionCode = 10020
-        versionName = "1.2.0-dev"
+        versionCode = 10021
+        versionName = "1.2.1-dev"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         buildConfigField("String", "GITHUB_CLIENT_ID", "\"${githubClientId.get()}\"")
         buildConfigField("String", "SOURCE_REPO_OWNER", "\"xingguangcuican6666\"")
         buildConfigField("String", "SOURCE_REPO_NAME", "\"ABK\"")
+        buildConfigField("String", "SOURCE_REPO_DEFAULT_BRANCH", "\"dev\"")
         buildConfigField("String", "UPSTREAM_REPO_URL", "\"https://github.com/zzh20188/GKI_KernelSU_SUSFS\"")
         buildConfigField("String", "TOP_LEVEL_REPO_URL", "\"https://github.com/WildKernels/GKI_KernelSU_SUSFS\"")
 
@@ -103,6 +104,7 @@ android {
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.process)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
